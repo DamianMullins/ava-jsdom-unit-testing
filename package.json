@@ -1,0 +1,42 @@
+{
+  "name": "ava-jsdom-unit-testing",
+  "version": "1.0.0",
+  "description": "Unit testing frontend JavaScript with AVA and jsdom",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run precompile && ava --verbose",
+    "test:cover": "nyc npm test",
+    "precompile": "babel src --out-dir=dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianMullins/ava-jsdom-unit-testing.git"
+  },
+  "author": "Damian Mullins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamianMullins/ava-jsdom-unit-testing/issues"
+  },
+  "homepage": "https://github.com/DamianMullins/ava-jsdom-unit-testing#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-cli": "^6.18.0",
+    "browser-env": "^2.0.15",
+    "nyc": "^8.3.2"
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup-browser-env.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  }
+}
